@@ -24,8 +24,8 @@ function getScore(){
     <h1 class="text-2xl mb-10">Vue Form</h1>
     <p class="mb-10">{{ saarcCountries }}</p>
     <p>Your Score: {{ getScore() }}</p>
-    <div class="my-5 border border-gray-400 p-5">
-      <p>What is the capital of Bangladesh ?</p>
+    <div class="my-5 border border-gray-400 p-5" v-for="country in saarcCountries" :key="country.name">
+      <p>What is the capital of {{country.name}} ?</p>
         <input  type="radio" />
         <label class="ml-2 mr-2">Dhaka</label>
     </div>
