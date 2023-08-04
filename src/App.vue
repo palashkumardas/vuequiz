@@ -1,30 +1,37 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { reactive } from 'vue'
+
+const saarcCountries = reactive([
+  { name: "Bangladesh", capital: "Dhaka" },
+  { name: "Nepal", capital: "Kathmandu" },
+  { name: "Bhutan", capital: "Thimphu" },
+  { name: "Sri Lanka", capital: "Colombo" },
+  { name: "India", capital: "New Delhi" },
+  { name: "Pakistan", capital: "Islamabad" },
+  { name: "Maldives", capital: "Male" }
+])
+
+const capitals = ["Dhaka", "Kathmandu", "Thimphu", "Colombo", "New Delhi", "Islamabad", "Male"]
+
+function getScore(){
+  let score = 0
+  return score;
+}
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <section class="mx-auto container text-left">
+    <h1 class="text-2xl mb-10">Vue Form</h1>
+    <p class="mb-10">{{ saarcCountries }}</p>
+    <p>Your Score: {{ getScore() }}</p>
+    <div class="my-5 border border-gray-400 p-5">
+      <p>What is the capital of Bangladesh ?</p>
+        <input  type="radio" />
+        <label class="ml-2 mr-2">Dhaka</label>
+    </div>
+  </section>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
 </style>
