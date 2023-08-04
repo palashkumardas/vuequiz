@@ -26,8 +26,10 @@ function getScore(){
     <p>Your Score: {{ getScore() }}</p>
     <div class="my-5 border border-gray-400 p-5" v-for="country in saarcCountries" :key="country.name">
       <p>What is the capital of {{country.name}} ?</p>
-        <input  type="radio" />
-        <label class="ml-2 mr-2">Dhaka</label>
+      <template v-for="capital in capitals" :key="capital">
+        <input :name="country.name" :value="capital" type="radio" />
+        <label class="ml-2 mr-2">{{capital}}</label>
+      </template>
     </div>
   </section>
 </template>
