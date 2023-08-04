@@ -15,7 +15,12 @@ const capitals = ["Dhaka", "Kathmandu", "Thimphu", "Colombo", "New Delhi", "Isla
 
 function getScore(){
   let score = 0
-  return score;
+  saarcCountries.forEach(country => {
+    if(country.answer===country.capital){
+      score++
+    }
+  })
+  return score
 }
 </script>
 
@@ -27,7 +32,7 @@ function getScore(){
     <div class="my-5 border border-gray-400 p-5" v-for="country in saarcCountries" :key="country.name">
       <p>What is the capital of {{country.name}} ?</p>
       <template v-for="capital in capitals" :key="capital">
-        <input :name="country.name" :value="capital" type="radio" />
+        <input :name="country.name" :value="capital" type="radio" v-model="country.answer"/>
         <label class="ml-2 mr-2">{{capital}}</label>
       </template>
     </div>
